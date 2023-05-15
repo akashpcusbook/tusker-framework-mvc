@@ -1,0 +1,19 @@
+{
+    "name": "tusker/tusker",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Tucker\\App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Akash Patel",
+            "email": "akashp.customizebook@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "tusker/framework": "^1.0"
+    }
+}
