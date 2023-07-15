@@ -1,0 +1,6 @@
+/vendor
+/library
+/.phpunit.cache
+.env
+.php-cs-fixer.cache
+.vscode

@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+
+<?php
+
+use Tusker\App\App;
+use Tusker\App\Kernel;
+use Tusker\Framework\Cli\Command;
+
+require_once './vendor/autoload.php';
+
+if(PHP_SAPI == 'cli') {
+    $kernel = new Kernel();
+    App::load($kernel);
+
+    Command::call($argc > 1 ? $argv[1] : '');
+}
