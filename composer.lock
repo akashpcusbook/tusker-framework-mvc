@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "422a357218399c0ad390fb8827117c79",
+    "content-hash": "2abb90fe644a3aa4182d068eef4fe5b3",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -2640,17 +2640,17 @@
             "time": "2023-04-21T08:48:44+00:00"
         },
         {
-            "name": "tusker/library",
-            "version": "dev-main",
+            "name": "tusker/framework",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
-                "url": "git@gitlab.com:tusker3/tusker-library.git",
-                "reference": "3f620d621ff98ecdb5fe4bfcbdd71764a7fe9b05"
+                "url": "https://github.com/akashpcusbook/tusker-framework.git",
+                "reference": "8d0b6e419e1dd026c48268feef0711f93db15ad0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/tusker3%2Ftusker-library/repository/archive.zip?sha=3f620d621ff98ecdb5fe4bfcbdd71764a7fe9b05",
-                "reference": "3f620d621ff98ecdb5fe4bfcbdd71764a7fe9b05",
+                "url": "https://api.github.com/repos/akashpcusbook/tusker-framework/zipball/8d0b6e419e1dd026c48268feef0711f93db15ad0",
+                "reference": "8d0b6e419e1dd026c48268feef0711f93db15ad0",
                 "shasum": ""
             },
             "require": {
@@ -2664,38 +2664,16 @@
                 "phpunit/phpunit": "^10.1",
                 "symfony/var-dumper": "^6.3"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Tusker\\Framework\\": "src/"
-                },
                 "files": [
                     "helper/common.php"
-                ]
-            },
-            "autoload-dev": {
+                ],
                 "psr-4": {
-                    "Tusker\\Framework\\Tests\\": "tests/"
+                    "Tusker\\Framework\\": "src/"
                 }
             },
-            "scripts": {
-                "test": [
-                    "Composer\\Config::disableProcessTimeout",
-                    "@test:phpunit",
-                    "@test:phpstan",
-                    "@test:cs"
-                ],
-                "test:phpunit": [
-                    "./vendor/bin/phpunit -c phpunit.xml"
-                ],
-                "test:phpstan": [
-                    "vendor/bin/phpstan analyse -c phpstan.neon"
-                ],
-                "test:cs": [
-                    "./vendor/bin/php-cs-fixer fix --dry-run --diff --allow-risky=yes"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2705,11 +2683,12 @@
                     "email": "akashp.brainerhub@gmail.com"
                 }
             ],
+            "description": "Tusker PHP library",
             "support": {
-                "source": "https://gitlab.com/tusker3/tusker-library/-/tree/main",
-                "issues": "https://gitlab.com/tusker3/tusker-library/-/issues"
+                "issues": "https://github.com/akashpcusbook/tusker-framework/issues",
+                "source": "https://github.com/akashpcusbook/tusker-framework/tree/v1.0.1"
             },
-            "time": "2023-07-12T10:02:19+00:00"
+            "time": "2023-07-15T17:25:03+00:00"
         },
         {
             "name": "twig/twig",
@@ -3868,16 +3847,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.2.4",
+            "version": "10.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "68484779b5a2ed711fbdeba6ca01910d87acdff2"
+                "reference": "15a89f123d8ca9c1e1598d6d87a56a8bf28c72cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/68484779b5a2ed711fbdeba6ca01910d87acdff2",
-                "reference": "68484779b5a2ed711fbdeba6ca01910d87acdff2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/15a89f123d8ca9c1e1598d6d87a56a8bf28c72cd",
+                "reference": "15a89f123d8ca9c1e1598d6d87a56a8bf28c72cd",
                 "shasum": ""
             },
             "require": {
@@ -3949,7 +3928,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.2.4"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.2.5"
             },
             "funding": [
                 {
@@ -3965,7 +3944,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-07-10T04:06:08+00:00"
+            "time": "2023-07-14T04:18:47+00:00"
         },
         {
             "name": "psr/event-dispatcher",
@@ -5470,9 +5449,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "tusker/library": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
