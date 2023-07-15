@@ -1,0 +1,45 @@
+#!/usr/bin/env php
+
+<?php
+
+use Doctrine\Migrations\Configuration\EntityManager\ExistingEntityManager;
+use Doctrine\Migrations\Configuration\Migration\PhpFile;
+use Doctrine\Migrations\DependencyFactory;
+use Doctrine\ORM\Tools\Console\ConsoleRunner;
+use Doctrine\ORM\Tools\Console\EntityManagerProvider\SingleManagerProvider;
+use Tusker\App\App;
+use Tusker\App\Kernel;
+
+require_once './vendor/autoload.php';
+
+if(PHP_SAPI == 'cli') {
+    $kernel = new Kernel();
+    App::load($kernel);
+
+    $entityManager = getObjectManager()->get('entityManager');
+    $migrationConfig = new PhpFile(config_path().'/migrations.php');
+    $dependencyFactory = DependencyFactory::fromEntityManager($migrationConfig, new ExistingEntityManager($entityManager));
+
+    $commands = [
+        // If you want to add your own custom console commands,
+        // you can do so here.
+        new \Doctrine\Migrations\Tools\Console\Command\CurrentCommand($dependencyFactory),
+        new \Doctrine\Migrations\Tools\Console\Command\DiffCommand($dependencyFactory),
+        new \Doctrine\Migrations\Tools\Console\Command\DumpSchemaCommand($dependencyFactory),
+        new \Doctrine\Migrations\Tools\Console\Command\ExecuteCommand($dependencyFactory),
+        new \Doctrine\Migrations\Tools\Console\Command\GenerateCommand($dependencyFactory),
+        new \Doctrine\Migrations\Tools\Console\Command\LatestCommand($dependencyFactory),
+        new \Doctrine\Migrations\Tools\Console\Command\ListCommand($dependencyFactory),
+        new \Doctrine\Migrations\Tools\Console\Command\MigrateCommand($dependencyFactory),
+        new \Doctrine\Migrations\Tools\Console\Command\RollupCommand($dependencyFactory),
+        new \Doctrine\Migrations\Tools\Console\Command\StatusCommand($dependencyFactory),
+        new \Doctrine\Migrations\Tools\Console\Command\SyncMetadataCommand($dependencyFactory),
+        new \Doctrine\Migrations\Tools\Console\Command\UpToDateCommand($dependencyFactory),
+        new \Doctrine\Migrations\Tools\Console\Command\VersionCommand($dependencyFactory)
+    ];
+
+    ConsoleRunner::run(
+        new SingleManagerProvider($entityManager),
+        $commands
+    );
+}
