@@ -4,12 +4,13 @@
     "type": "project",
     "require": {
         "php": "^8.2",
-        "tusker/framework": "^1.0.1",
+        "tusker/framework": "^1.1.0",
         "symfony/var-dumper": "^6.3",
         "twig/twig": "^3.0",
         "doctrine/orm": "^2.15",
         "symfony/cache": "^6.3",
-        "doctrine/migrations": "^3.6"
+        "doctrine/migrations": "^3.6",
+        "guzzlehttp/guzzle": "^7.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.1",
