@@ -2,7 +2,7 @@
 
 namespace Tusker\App\Controller;
 
-class Welcome
+class Welcome extends Controller
 {
     public function __construct() {}
 
